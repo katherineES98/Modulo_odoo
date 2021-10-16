@@ -34,6 +34,7 @@ class Session(models.Model):
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     seats = fields.Integer(string="Number of seats")
     active = fields.Boolean(default=True)
+    color = fields.Integer()
     instructor_id = fields.Many2one('res.partner', string="Instructor",  domain=['|', ('instructor', '=', True),
                      ('category_id.name', 'ilike', "Teacher")])
     course_id = fields.Many2one('open_academy.course',
@@ -46,6 +47,8 @@ class Session(models.Model):
                             compute='_get_hours', inverse='_set_hours')
     attendees_count = fields.Integer(
         string="Attendees count", compute='_get_attendees_count', store=True)
+    
+
 
     @api.depends('seats', 'attendee_ids')
     def _taken_seats(self):
