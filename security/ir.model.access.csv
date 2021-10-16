@@ -3,5 +3,6 @@ open_academy_course_full_access,open_academy_course_full_access,model_open_acade
 
 access_openacademy_session,access_openacademy_session,model_openacademy_session,,1,1,1,1
 
+wizard_managers,wizard session manager,model_openacademy_wizard,,1,1,1,1
 
 
